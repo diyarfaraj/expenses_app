@@ -8,12 +8,14 @@ namespace ExpensesApp.ViewModels
 
         public CategoriesVM()
         {
-            GetCategories();
+            Categories = new ObservableCollection<string>();
+            AddCategories();
+            
         }
 
-        private void GetCategories()
+        private void AddCategories()
         {
-            Categories = new ObservableCollection<string>();
+            Categories.Clear();
             Categories.Add("housing");
             Categories.Add("debt");
             Categories.Add("health");

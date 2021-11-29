@@ -19,8 +19,9 @@ namespace ExpensesApp
         public App(string datebasePath)
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
             DatebasePath = datebasePath;
+
+            MainPage = new NavigationPage(new MainPage());
 
         }
 

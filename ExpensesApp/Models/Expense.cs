@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace ExpensesApp.Models
@@ -22,6 +23,23 @@ namespace ExpensesApp.Models
                 return connection.Insert(expense);
             }
         }
+
+        public static List<Expense> GetExpenses()
+        {
+            using (var connection = new SQLiteConnection(App.DatebasePath))
+            {
+                connection.CreateTable<Expense>();
+                return connection.Table<Expense>().ToList();
+            }
+        }
         
+        public static object GetExpensesCategory(string category)
+        {
+            using (var connection = new SQLiteConnection(App.DatebasePath))
+            {
+                connection.CreateTable<Expense>();
+                return connection.Table<Expense>().Where(e => e.Category == category).ToList();
+            }
+        }
     }
 }
