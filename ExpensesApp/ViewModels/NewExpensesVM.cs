@@ -18,6 +18,7 @@ namespace ExpensesApp.ViewModels
             expenseDate = DateTime.Today;
             SaveExpenseCommand = new Command(InsertExpense);
             AddCategories();
+            Console.WriteLine(Categories);
         }
         public string ExpenseName
         {
@@ -100,7 +101,7 @@ namespace ExpensesApp.ViewModels
             Categories.Add("health");
             Categories.Add("personal");
             Categories.Add("travel");
-
+        
         }
         
     }

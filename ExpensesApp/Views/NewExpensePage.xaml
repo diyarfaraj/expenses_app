@@ -19,7 +19,7 @@
            <Entry Placeholder="Short description" Text="{Binding ExpenseDescription, Mode=TwoWay}"
            />
            <DatePicker Date="{Binding ExpenseDateTime, Mode=TwoWay}" />
-           <Picker SelectedItem="{Binding Categories,Mode=TwoWay }"/>
+           <Picker SelectedItem="{Binding ExpenseCategory,Mode=TwoWay }" ItemsSource="{Binding Categories}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
