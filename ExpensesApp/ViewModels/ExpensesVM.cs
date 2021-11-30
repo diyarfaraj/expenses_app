@@ -18,7 +18,7 @@ namespace ExpensesApp.ViewModels
             GetExpenses();
         }
 
-        private void GetExpenses()
+        public void GetExpenses()
         {
             var expenses = Expense.GetExpenses();
             Expenses.Clear();
@@ -27,10 +27,15 @@ namespace ExpensesApp.ViewModels
                 Expenses.Add(expense);
             }
         }
+        
+       
+
 
         public void NavigateToExpense()
         {
             Application.Current.MainPage.Navigation.PushAsync(new NewExpensePage());
         }
+        
+        
     }
 }

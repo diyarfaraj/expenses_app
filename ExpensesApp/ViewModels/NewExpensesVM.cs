@@ -88,7 +88,7 @@ namespace ExpensesApp.ViewModels
                 Application.Current.MainPage.Navigation.PopAsync();
             else
                 Application.Current.MainPage.DisplayAlert("Error", "Can't save the expense", "Ok");
-
+           
 
 
         }
