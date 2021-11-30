@@ -3,9 +3,10 @@ using Android.Views;
 using ExpensesApp.Android.CustomRenderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Color = Android.Graphics.Color;
 using View = Android.Views.View;
 
-[assembly:ExportRenderer(typeof(TextCellRenderer), typeof(CustomTextCellRenderer))]
+[assembly:ExportRenderer(typeof(TextCell), typeof(CustomTextCellRenderer))]
 
 namespace ExpensesApp.Android.CustomRenderer
 {
@@ -18,9 +19,18 @@ namespace ExpensesApp.Android.CustomRenderer
             switch (item.StyleId)
             {
                 case "none":
-                    cell.Activated
-                    
+                    cell.SetBackgroundColor(Color.Gray);
+                    break;
+                case "checkmark":
+                    cell.SetBackgroundColor(Color.Blue);
+                    break;
+                default:
+                    cell.SetBackgroundColor(Color.Red);
+                    break;
+
             }
+
+            return cell;
         }
     }
 }
