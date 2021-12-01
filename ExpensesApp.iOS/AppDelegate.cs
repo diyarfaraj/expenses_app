@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace ExpensesApp.iOS
 {
@@ -27,6 +28,8 @@ namespace ExpensesApp.iOS
             string folder_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..",
                 "Library");
             string full_path = Path.Combine(folder_path, db_name);
+            
+            DependencyService.Register<Share>();
             
             LoadApplication(new App(full_path));
 

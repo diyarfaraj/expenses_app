@@ -2,6 +2,8 @@
 using System.Reflection;
 using ExpensesApp.Models;
 using System.Linq;
+using ExpensesApp.Interfaces;
+using Xamarin.Forms;
 
 namespace ExpensesApp.ViewModels
 {
@@ -47,10 +49,19 @@ namespace ExpensesApp.ViewModels
 
         }
         
+        public void ShareReport()
+        {
+            IShare shareDependency = DependencyService.Get<IShare>();
+            shareDependency.Show(" "," "," ");
+
+        }
+        
         public class CategoryExpenses
         {
             public string Category { get; set; }
             public float ExpensesPercentage { get; set; }
         }
+        
+    
     }
 }
