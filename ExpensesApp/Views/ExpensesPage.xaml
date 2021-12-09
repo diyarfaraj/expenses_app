@@ -12,7 +12,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding Source={StaticResource vm}, Path=AddExpenseCommand}"/>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+    <ContentPage.Content >
         <ListView ItemsSource="{Binding Source={StaticResource vm}, Path=Expenses}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
